@@ -203,6 +203,17 @@
     width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 6px;
   }
 
+  .rm-shots{
+    display:grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1.4fr 1fr;
+    grid-template-areas: "title title" "arm neck";
+    gap: 4px; width:100%; height:100%;
+  }
+  .rm-tile{ overflow:hidden; background:#0c0e13; }
+  .rm-tile img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .rm-title{ grid-area: title; }
+  .rm-arm{ grid-area: arm; }
+  .rm-neck{ grid-area: neck; }
+
   /* Web app live-site preview cards */
   .site-links{ width:100%; height:100%; display:grid; grid-template-rows: 1fr 1fr; gap:4px; }
   .site-card{
@@ -231,14 +242,14 @@
     transition: border-color .2s ease;
   }
   .gd-poster:hover{ border-color: var(--accent); }
-  .gd-poster embed{ width: 100%; height: 100%; border: 0; display: block; }
+  .gd-poster embed, .gd-poster img{ width: 100%; height: 100%; border: 0; display: block; object-fit: cover; }
   .gd-logo-banner{
     aspect-ratio: 1.6; max-width: 560px; margin: 0 auto;
     border-radius: 8px; overflow: hidden; border: 1px solid var(--line); background: #fff;
     transition: border-color .2s ease;
   }
   .gd-logo-banner:hover{ border-color: var(--accent); }
-  .gd-logo-banner embed{ width: 100%; height: 100%; border: 0; display: block; }
+  .gd-logo-banner embed, .gd-logo-banner img{ width: 100%; height: 100%; border: 0; display: block; object-fit: contain; }
   @media (max-width: 700px){
     .gd-posters{ grid-template-columns: 1fr; }
   }
@@ -414,10 +425,12 @@
     </div>
 
     <div class="project reveal">
-      <div class="demo-slot has-media" data-placeholder="rhythmotion">
-        <video controls preload="metadata" playsinline>
-          <source src="assets/Copy of RhythMotion Demo Trailer.mp4" type="video/mp4">
-        </video>
+      <div class="demo-slot has-media">
+        <div class="rm-shots">
+          <div class="rm-tile rm-title"><img src="assets/title screen.png" alt="RhythMotion title screen"></div>
+          <div class="rm-tile rm-arm"><img src="assets/arm demo.png" alt="RhythMotion arm rehabilitation demo"></div>
+          <div class="rm-tile rm-neck"><img src="assets/neck demo.png" alt="RhythMotion neck rehabilitation demo"></div>
+        </div>
       </div>
       <div>
         <span class="proj-tag">BS CS Thesis — Godot, C#</span>
@@ -434,10 +447,8 @@
     </div>
 
     <div class="project reveal">
-      <div class="demo-slot has-media" data-placeholder="letmecook">
-        <video controls preload="metadata" playsinline>
-          <source src="assets/lmc demo.mp4" type="video/mp4">
-        </video>
+      <div class="demo-slot has-media">
+        <img src="assets/LMC title screen.png" alt="Let Me Cook! title screen" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       <div>
         <span class="proj-tag">BS DGDD Thesis — Godot, C#</span>
@@ -492,10 +503,10 @@
         </ul>
       </div>
       <div class="gd-posters">
-        <div class="gd-poster"><embed src="assets/Copy of Clinic poster.pdf#toolbar=0&navpanes=0&view=FitH" type="application/pdf"></div>
-        <div class="gd-poster"><embed src="assets/Copy of PDGX Poster.pdf#toolbar=0&navpanes=0&view=FitH" type="application/pdf"></div>
+        <div class="gd-poster"><img src="assets/Copy of Clinic poster.jpg" alt="Lingap Bayanihan clinic poster design"></div>
+        <div class="gd-poster"><img src="assets/Copy of PDGX Poster.jpg" alt="PDGX poster design"></div>
       </div>
-      <div class="gd-logo-banner"><embed src="assets/Copy of Logo.pdf#toolbar=0&navpanes=0&view=FitH" type="application/pdf"></div>
+      <div class="gd-logo-banner"><img src="assets/Copy of Logo.png" alt="RhythMotion logo design"></div>
     </div>
 
     <div class="brandbook-strip reveal">
